@@ -1,0 +1,44 @@
+@startuml
+start
+
+partition "rand a meeting plot" {
+    :filter by idol's personality;
+    :filter by affection;
+}
+:play meeting plot;
+
+partition "rand drink to choose" {
+    :rand three type of drink;
+    note
+    e.g. Carbonated drinks, Ready-to-drink
+    end note
+
+    :rand specific drink that fits the types randed above;
+    note
+    for Carbonated drinks,
+    what player see can be:
+    * //iced cola//
+    * //Ramune//
+    * //HeySong Sarsaparilla//
+    * etc.
+    end note
+}
+:player choose what drink to order for idol;
+
+partition "rand idol's response to the drink" {
+    :filter by idol's personality;
+    :filter by idol's preference;
+    note
+    depends on the type of drink,
+    not the actual drink
+    end note
+
+    :weighted random idol's response;
+    note
+    each one has its own probability
+    end note
+}
+:play idol's response and follow-up plot;
+
+stop
+@enduml

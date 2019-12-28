@@ -1,0 +1,62 @@
+@startuml
+start
+
+:get meeting plot lib;
+:check conditions;
+:rand a plot to play;
+
+repeat
+
+partition "get section info" {
+    :get section info;
+    note
+        **response for how story unfold**,
+        * represents a linear story fragment
+        * points to following story/stories
+            (stories => options to choose)
+    end note
+
+    while (require info from other section?)
+    note
+        e.g. the options in storyline of
+        //drinking at the bar with idol//
+        are made by merging
+        * drink type
+        * drink name
+    end note
+        :get info of the section to merge;
+        :merge section info;
+    end while
+}
+
+partition "get step info" {
+    :get step info;
+    note
+        **response for showing one dialogue**
+        not need to worry which dialogue is next
+    end note
+
+    :replace placeholder;
+}
+
+partition "get following section" {
+    :get following section;
+    :check conditions;
+    :replace placeholder in option desc;
+}
+
+:combine all info into dialogue info;
+:play dialogue;
+:player click for next or choose option;
+
+if (story is ended) then (true)
+    stop
+endif
+
+if (section is ended) then (true)
+    :jump to chosen section;
+endif
+
+repeat while(true);
+
+@enduml
