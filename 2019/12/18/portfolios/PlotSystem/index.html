@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/storyline/剧情方案示例.png">
 <meta property="og:image" content="http://yoursite.com/assets/storyline/酒吧剧情需求.png">
 <meta property="og:image" content="http://yoursite.com/assets/storyline/酒吧剧情实现流程图.png">
-<meta property="og:updated_time" content="2019-12-27T09:03:43.804Z">
+<meta property="og:updated_time" content="2019-12-28T07:23:04.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A flexible plot system">
 <meta name="twitter:description" content="Starlight Idol —— an idol simulation gameGame developer - Xiamen Pocket Legends - 2015/2018 An idol simulation game about a young protagonist starting her own idol agency. The exquisite cubism combin">
@@ -200,19 +200,16 @@
 <p>Responsibility:<br>Besides developing client and/or server features independently or in collaboration, I designed and programmed the plot system, the core content of our game with a plurality of rules of unlocking and unfolding, in which I called interface provided by others and provided few encapsulated entry for others.<br><a id="more"></a></p>
 <h3 id="Demo-video"><a href="#Demo-video" class="headerlink" title="Demo video"></a>Demo video</h3><div align="center"><br>    <video controls width="30%"><br>        <source src="/assets/storyline/酒吧剧情演示.mp4" type="video/mp4"><br>    </video><br></div>
 
-<h3 id="Specialties"><a href="#Specialties" class="headerlink" title="Specialties"></a>Specialties</h3><p>The original design I made in the beginning, has been proved flexible and comprehensive enough: it covered most of the additional requirements without changing any code; as for the rest, they took no more than a few minor modifications.<br>Support at least all the features listed below  </p>
+<h3 id="Specialties"><a href="#Specialties" class="headerlink" title="Specialties"></a>Specialties</h3><p>The original design I made has been proved flexible and comprehensive enough: it covered most of the additional requirements without changing any code; as for the rest, they took no more than a few minor modifications.<br>Support at least all the features listed below  </p>
 <ul>
 <li><strong>numerous of story flow</strong></li>
-<li>all kinds of placeholder</li>
+<li>all kinds of placeholders</li>
 <li>a variety of trigger conditions</li>
 <li>trigger events when players have done with particular dialogues or chosen specific options, to deliver rewards, deduct consume or other game events</li>
 <li>plots are randomized from corresponding libraries and combined together to build a varied story experience<ul>
-<li>all kinds of random rules, such as completely random, weighted random, random with filter rules</li>
-</ul>
-</li>
-<li>some of the follow-up stories are randomized depends on the options players chose<ul>
-<li>some of the follow-up stories are randomized depends on the type of the options players chose, not on the option itself  <blockquote>
-<p>For example, <em>iced cola</em> and <em>Ramune</em> are belonged to <strong><em>Carbonated drinks</em></strong>, and the story after these two options are depended on <strong><em>Carbonated drinks</em></strong>.</p>
+<li>all kinds of random rules, such as completely random, weighted random, random with filter rules<br>•    some of the follow-up stories are randomized depending on the options chosen by the players</li>
+<li>some of the follow-up stories are randomized depending on the type of the options chosen by the players, not on the option itself  <blockquote>
+<p>For example, <em>iced cola</em> and <em>Ramune</em> belonged to <strong><em>Carbonated drinks</em></strong>, and the story after these two options depend on <strong><em>Carbonated drinks</em></strong>.</p>
 </blockquote>
 </li>
 </ul>
@@ -230,7 +227,7 @@
 <h3 id="Design-process"><a href="#Design-process" class="headerlink" title="Design process"></a>Design process</h3><h4 id="Initial-requirements"><a href="#Initial-requirements" class="headerlink" title="Initial requirements"></a>Initial requirements</h4><p>The initial requirement provided by designers can be described as the flow chart below.</p>
 <div align="center"><br>    <img src="/assets/storyline/InitRequirement.png" width="300" alt="Init requirements"><br></div>      
 
-<h4 id="The-requirements-I-extended"><a href="#The-requirements-I-extended" class="headerlink" title="The requirements I extended"></a>The requirements I extended</h4><p>Besides the requirements listed by designers, I organized part of the basic story flow of the game I was playing at the time–<strong><em>The Witcher 3: Wild Hunt</em></strong>(see the flow chart below). Considering flexibly supporting similar story flow as fundamental needs, I designed the whole system so that it could meet requirement changes that arise later.</p>
+<h4 id="The-requirements-I-extended"><a href="#The-requirements-I-extended" class="headerlink" title="The requirements I extended"></a>The requirements I extended</h4><p>Besides the requirements listed by designers, I organized part of the basic story flow of the game I was playing at the time–<strong><em>The Witcher 3: Wild Hunt</em></strong>(see the flow chart below). To flexibly supporting similar story flow as fundamental needs, I designed the whole system so that it could meet requirement changes that arise later.</p>
 <div align="center"><br>    <img src="/assets/storyline/GameExperience.png" width="600" alt="Flow chart of the requirements I extended"><br></div>
 
 <h4 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h4><p>Split the plot into two parts: <strong><em>section</em></strong> and <strong><em>node</em></strong></p>
@@ -238,7 +235,7 @@
 <li>Section: responsible for story flow.<br>Each section represents a piece of linear story fragment and points to the next section(s) or section library.</li>
 <li>Node: responsible for the display of one single dialogue</li>
 </ul>
-<p>For example, the story flow on the left diagram in the figure below can be split into the form on the right diagram, and the system plays the plot one section by another.<br><img src="/assets/storyline/剧情方案示例.png" width="900" alt="A demostration of how a plot is organized"></p>
+<p>For example, the story flow on the left diagram in the figure below can be split into the form on the right diagram, and the system plays the plot one section after another.<br><img src="/assets/storyline/剧情方案示例.png" width="900" alt="A demostration of how a plot is organized"></p>
 <h3 id="The-logic-of-the-plot-in-the-video"><a href="#The-logic-of-the-plot-in-the-video" class="headerlink" title="The logic of the plot in the video"></a>The logic of the plot in the video</h3><div align="center"><br>    <img src="/assets/storyline/酒吧剧情需求.png" width="400" alt="The requirements of the plot in the video above"><br></div>
 
 <h3 id="How-I-implement-it"><a href="#How-I-implement-it" class="headerlink" title="How I implement it"></a>How I implement it</h3><div align="center"><br>    <img src="/assets/storyline/酒吧剧情实现流程图.png" width="450" alt="How that plot is implemented"><br></div>    
